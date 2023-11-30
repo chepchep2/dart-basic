@@ -3,6 +3,8 @@
 속성이나 동작은 작성 할 필요 없습니다. (내용은 아무것도 작성하지 않아도 됨)
 */
 
+import 'dart:math';
+
 class Cleric {
   String name;
   int hp;
@@ -28,9 +30,22 @@ class Cleric {
       print(hp);
     }
   }
+
+  int pray(int time) {
+    int currentMp = mp;
+    Random random = Random();
+    int heal = random.nextInt(3) + time;
+    mp += heal;
+
+    if (mp > maxMp) {
+      mp = maxMp;
+    }
+    return mp - currentMp;
+  }
 }
 
 void main() {
   Cleric cleric = Cleric("조상우", 40, 40);
   cleric.selfAid();
+  print(cleric.pray(3));
 }
