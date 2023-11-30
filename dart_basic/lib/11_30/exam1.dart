@@ -4,9 +4,33 @@
 */
 
 class Cleric {
-  final name = "이름";
-  int hp = 50;
+  String name;
+  int hp;
   final maxHp = 50;
-  int mp = 10;
-  final maxMp = 10;
+  int mp;
+  final maxMp = 50;
+
+  Cleric(
+    this.name,
+    this.hp,
+    this.mp,
+  );
+
+  void selfAid() {
+    if (mp < 5) {
+      print("mp가 없습니다.");
+    } else if (hp == maxHp) {
+      print("hp가 최대입니다.");
+    } else {
+      mp -= 5;
+      print(hp);
+      hp = maxHp;
+      print(hp);
+    }
+  }
+}
+
+void main() {
+  Cleric cleric = Cleric("조상우", 40, 40);
+  cleric.selfAid();
 }
