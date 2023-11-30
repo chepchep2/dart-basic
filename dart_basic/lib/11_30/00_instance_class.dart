@@ -1,11 +1,9 @@
-import 'package:dart_basic/11_30/hero.dart';
-
 void main() {
-  final hero = Hero("용사", 100);
+  // final hero = Hero("용사", 100);
 
-  final car = Car();
+  // final car = Car();
 
-  Door door = Door();
+  // Door door = Door();
   // 기본 자료형
   // int, double, bool, String
 
