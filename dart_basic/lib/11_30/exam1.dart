@@ -3,4 +3,10 @@
 속성이나 동작은 작성 할 필요 없습니다. (내용은 아무것도 작성하지 않아도 됨)
 */
 
-class Cleric {}
+class Cleric {
+  final name = "이름";
+  int hp = 50;
+  final maxHp = 50;
+  int mp = 10;
+  final maxMp = 10;
+}
