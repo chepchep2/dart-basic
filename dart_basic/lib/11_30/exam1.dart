@@ -28,7 +28,7 @@ class Cleric {
   int hp;
   final maxHp = 50;
   int mp;
-  final maxMp = 50;
+  final maxMp = 10;
 
   Cleric(
     this.name,
@@ -80,7 +80,7 @@ class Cleric {
 }
 
 void main() {
-  Cleric cleric = Cleric("조상우", 40, 40);
+  Cleric cleric = Cleric("조상우", 40, 4);
   cleric.selfAid();
   print(cleric.pray(3));
 }
