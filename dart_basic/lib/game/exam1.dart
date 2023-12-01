@@ -26,9 +26,10 @@ import 'dart:math';
 class Cleric {
   String name;
   int hp;
-  final maxHp = 50;
   int mp;
+  final maxHp = 50;
   final maxMp = 10;
+  // 공통의 것으로 만든다.
 
   Cleric(
     this.name,
