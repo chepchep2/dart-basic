@@ -21,21 +21,28 @@
 이 메소드는 인수에 "기도할 시간(초)"를 지정할 수 있고, 리턴 값은 "실제로 회복된 MP 양"을 반환한다.
 */
 
+///
+/// 2-1
+/// 1장의 연습문제에서 작성한 Cleric 클래스에 관하여, 2가지 수정을 행하시오.
+/// 1. 현 시점의 Cleric 클래스의 정의에는, 각 인스턴스별로 최대 HP와 최대 MP 필드에 정보를 가지고 있습니다.
+///    하지만, 모든 성직자의 최대 HP는 50, 최대 MP는 10으로 정해져 있어, 각 인스턴스가 각각의 정보를 가지는 것은 메모르 낭비이다.
+///    그래서, 최대 HP, 최대 MP의 필드가 각 인스턴스별로 있지 않도록, 필드 선언에 적절한 키워드를 추가 하던지 말던지 자유.
+///
+
 import 'dart:math';
 
 class Cleric {
   String name;
   int hp;
   int mp;
-  final maxHp = 50;
-  final maxMp = 10;
-  // 공통의 것으로 만든다.
+  static const maxHp = 50;
+  static const maxMp = 50;
 
   Cleric(
-    this.name,
-    this.hp,
-    this.mp,
-  );
+    this.name, {
+    this.hp = maxHp,
+    this.mp = maxMp,
+  });
 
   void selfAid() {
     if (mp < 5) {
@@ -81,7 +88,20 @@ class Cleric {
 }
 
 void main() {
-  Cleric cleric = Cleric("조상우", 40, 4);
-  cleric.selfAid();
-  print(cleric.pray(3));
+  // Cleric cleric = Cleric("조상우", 40, 4);
+  // cleric.selfAid();
+  // print(cleric.pray(3));
+  Cleric Arthas1 = Cleric("아서스1", hp: 40, mp: 5);
+  print(Arthas1.name);
+  print(Arthas1.hp);
+  print(Arthas1.mp);
+  Cleric Arthas2 = Cleric("아서스2", hp: 35);
+  print(Arthas2.name);
+  print(Arthas2.hp);
+  print(Arthas2.mp);
+  Cleric Arthas3 = Cleric("아서스3");
+  print(Arthas3.name);
+  print(Arthas3.hp);
+  print(Arthas3.mp);
+  // Cleric Arthas4 = Cleric();
 }
