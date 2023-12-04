@@ -22,18 +22,27 @@ class Wizard {
     required this.name,
     required this.hp,
     required this.mp,
-  }) {
+  });
+
+  get nameCheck {
     if (name.length < 3) {
       throw Exception("에러메세지");
     }
+  }
+
+  get mpCheck {
     if (mp < 0) {
       throw Exception("에러메세지");
     }
+  }
 
+  get wandCheck {
     if (wand == null) {
       throw Exception("에러메세지");
     }
+  }
 
+  get hpReset {
     if (hp < 0) {
       hp = 0;
     }
