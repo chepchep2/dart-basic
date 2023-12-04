@@ -1,11 +1,12 @@
 class Wand {
-  String name;
-  double power;
+  final String _name;
+  final double _power;
 
   Wand({
-    required this.name,
-    required this.power,
-  }) {
+    required String name,
+    required double power,
+  })  : _name = name,
+        _power = power {
     if (name.length < 3) {
       throw Exception("에러메세지");
     }
