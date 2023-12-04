@@ -22,29 +22,27 @@ class Wizard {
     required this.name,
     required this.hp,
     required this.mp,
-  });
-
-  get nameCheck {
+    Wand? wand,
+  }) {
     if (name.length < 3) {
       throw Exception("에러메세지");
     }
-  }
-
-  get mpCheck {
     if (mp < 0) {
       throw Exception("에러메세지");
     }
-  }
-
-  get wandCheck {
     if (wand == null) {
       throw Exception("에러메세지");
     }
-  }
 
-  get hpReset {
     if (hp < 0) {
       hp = 0;
     }
   }
+}
+
+void main() {
+  Wand wd = Wand(name: "완드임", power: 10.0);
+
+  Wizard wizard = Wizard(name: "마법사", hp: 40, mp: 30, wand: wd);
+  print(wizard.name);
 }
