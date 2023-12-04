@@ -13,18 +13,16 @@ import 'package:dart_basic/game/wand.dart';
 /// 5. HP가 음수가 되는 상황에서는 대신 0을 설정 되도록 한다. (에러 아님)
 
 class Wizard {
-  final String _name;
-  final int _hp;
-  final int _mp;
+  final String name;
+  int hp;
+  int mp;
   Wand? wand;
 
   Wizard({
-    required String name,
-    required int hp,
-    required int mp,
-  })  : _name = name,
-        _hp = hp,
-        _mp = mp {
+    required this.name,
+    required this.hp,
+    required this.mp,
+  }) {
     if (name.length < 3) {
       throw Exception("에러메세지");
     }
