@@ -13,6 +13,8 @@ A, B가 같다면 'eq'를 출력
 eq
 */
 
+import 'dart:math';
+
 void main() {
   int a = 10;
   int b = 10;
@@ -24,4 +26,20 @@ void main() {
   } else if (b > a) {
     print(b);
   }
+
+  print(solution(3, 3));
+}
+
+String solution(int a, int b) {
+  // if (a > b) {
+  //   return a.toString();
+  // } else if (b > a) {
+  //   return b.toString();
+  // }
+  // return 'eq';
+  if (a == b) {
+    return 'eq';
+  }
+
+  return max(a, b).toString();
 }

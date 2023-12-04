@@ -25,4 +25,22 @@ void main() {
     int result = a + i * 10;
     print(result);
   }
+
+  print(solution(5, 10));
+  print(solution(3, 3));
+  print(solution(1, 3));
+}
+
+String solution(int m, int n) {
+  String result = '';
+
+  for (int i = 1; i < 10; i++) {
+    // 1번째: 5 + 10 * 0 = 5
+    // 2번째: 5 + 10 * 1 = 15;
+    // 3번째: 5 + 10 * 2 = 25;
+    // ...
+    // m + n * i
+    result += '${m + n * i} ';
+  }
+  return result;
 }

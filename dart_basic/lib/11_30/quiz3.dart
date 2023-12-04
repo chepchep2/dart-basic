@@ -16,4 +16,14 @@ void main() {
   String d = "5678";
 
   print("$a $b-$c-$d");
+
+  final inputs = ['Java', 'Gino'];
+
+  print(solution(inputs));
+}
+
+String solution(List<String> inputs) {
+  String result = '';
+
+  return result;
 }
