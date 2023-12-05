@@ -15,7 +15,9 @@ class Hero {
   // 메서드: 클래스내에서 클래스를 위한 동작을 하는 함수
   // 함수: 클래스랑 상관 없이 독자적으로 실행되는 함수
 
-  void run() {}
+  void run() {
+    print('뛰었다');
+  }
 
   void sleep() {}
 
@@ -30,7 +32,7 @@ class Hero {
   void attack(Slime slime) {
     print('$name이 $slime을 공격했다.');
     print('슬라임의 반격을 받았다.');
-    hp -= 10;
+    slime.hp -= 10;
     if (hp <= 0) {
       die();
     }
