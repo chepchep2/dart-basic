@@ -1,4 +1,4 @@
-import 'package:dart_basic/12_4/exam2.dart';
+import 'package:dart_basic/23_12_04/exam2.dart';
 
 /// 연습문제 2-3
 /// 연습문제 2-3에서 작성한 Person 클래스로 생성한 '홍길동', '한석봉'의 나이를 각각 20,
