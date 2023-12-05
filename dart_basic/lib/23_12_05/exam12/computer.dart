@@ -8,5 +8,9 @@ class Computer extends TangibleAsset {
     required super.price,
     required super.color,
     required this.makerName,
+    required this.weight,
   });
+
+  @override
+  double weight;
 }

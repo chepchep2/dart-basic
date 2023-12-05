@@ -8,5 +8,9 @@ class Book extends TangibleAsset {
     required super.price,
     required super.color,
     required this.isbn,
+    required this.weight,
   });
+
+  @override
+  double weight;
 }
