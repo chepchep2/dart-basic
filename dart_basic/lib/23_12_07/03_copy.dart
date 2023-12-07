@@ -1,11 +1,11 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 void main() {
   print('a' == 'a');
-  print(Person('a', 10) == Person('a', 10));
+  print(Person(name: 'a', age: 10) == Person(name: 'a', age: 10));
 
-  final p1 = Person('a', 10);
+  final p1 = Person(name: 'a', age: 10);
 
-  final clone = Person(p1.name, p1.age);
+  final clone = Person(name: p1.name, age: p1.age);
 
   print(p1 == clone);
 
@@ -19,20 +19,31 @@ void main() {
 class Person {
   String name;
   int age;
-  Person(
-    this.name,
-    this.age,
-  );
+  Person({
+    required this.name,
+    required this.age,
+  });
 
   Person copywith({
     String? name,
     int? age,
   }) {
     return Person(
-      name ?? this.name,
-      age ?? this.age,
+      name: name ?? this.name,
+      age: age ?? this.age,
     );
   }
+
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is Person &&
+          runtimeType == other.runtimeType &&
+          name == other.name &&
+          age == other.age;
+
+  @override
+  int get hashCode => name.hashCode ^ age.hashCode;
 
   @override
   String toString() {

@@ -23,17 +23,20 @@ void main() {
   /// sort를 하기위해선 기본적인 규칙들이 있다.
   /// Comparator
   ///   : sort((a, b) => a.compareTo(b));
-  ///   a가 b보다 작으면 음수
+  ///   a가 b보다 작으면 음수 (-1)
+  ///   같으면 0
+  ///   a가 b보다 크면 양수 (+1)
   ///
-  ///   nums.sort(((a, b) {
-  ///     if (a > b) {
-  ///       return 1;
-  ///     } else if (b > a) {
-  ///        return -1;
-  ///     } else {
-  ///        return 0;
-  ///     }
-  ///   }));
+  nums.sort(((a, b) {
+    if (a > b) {
+      return 1;
+    } else if (b > a) {
+      return -1;
+    } else {
+      return 0;
+    }
+  }));
+  print(nums);
 }
 
 class Person implements Comparable<Person> {
@@ -60,4 +63,15 @@ class Person implements Comparable<Person> {
 
     return nameEqual;
   }
+
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is Person &&
+          runtimeType == other.runtimeType &&
+          name == other.name &&
+          age == other.age;
+
+  @override
+  int get hashCode => name.hashCode ^ age.hashCode;
 }

@@ -21,6 +21,18 @@ void main() {
 
   heros.add(h2);
   print(heros.length);
+
+  final Set<Hero> heroes1 = {};
+
+  final h3 = Hero(name: '슈퍼맨', hp: 100);
+  final h4 = Hero(name: '슈퍼맨', hp: 100);
+
+  heroes1.add(h3);
+  print(heroes1.length);
+
+  heroes1.add(h4);
+  print(heroes1.length);
+  // Hero가 2개(2번) 불러와서
 }
 
 class Person extends Object {}
