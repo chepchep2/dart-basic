@@ -18,9 +18,7 @@ class Hero {
     required this.name,
     required int hp,
     this.sword,
-  }) : _hp = hp {
-    print('1. Hero 생성자');
-  }
+  }) : _hp = hp;
 
   int get hp => _hp;
 
@@ -39,6 +37,11 @@ class Hero {
 
   void run() {
     print('뛰었다.');
+  }
+
+  @override
+  String toString() {
+    return 'Hero{}';
   }
 }
 
