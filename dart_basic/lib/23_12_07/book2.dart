@@ -32,6 +32,10 @@ class Book2 {
 
   @override
   int get hashCode => title.hashCode ^ publishDate.hashCode;
+  // ^ 이 표시가 XOR 이라고 하던데
+  // true true이면 false
+  // false false 이면 false
+  // false true이면 true
 
   @override
   String toString() =>
@@ -40,28 +44,38 @@ class Book2 {
 
 void main() {
   Book2 book1 =
-      // Book2(title: 'The Silmarillion', comment: 'Middle-earth.', publishDate: DateTime.now());
+      // Book2(
+      //     title: 'The Silmarillion',
+      //     comment: 'Middle-earth.',
+      //     publishDate: DateTime.now());
       Book2(
           title: 'The Silmarillion',
+          // title: '실마릴리온',
           comment: 'Middle-earth',
-          publishDate: DateTime(DateTime.april));
+          publishDate: DateTime(2023, 12, 7));
 
   Book2 book2 =
-      // Book2(title: 'The Silmarillion', comment: 'Middle-earth.', publishDate: DateTime.now());
+      // Book2(
+      //     title: 'The Silmarillion',
+      //     comment: 'Middle-earth.',
+      //     publishDate: DateTime.now());
       Book2(
           title: 'The Silmarillion',
+          // title: '실마릴리온',
           comment: 'Middle-earth',
-          publishDate: DateTime(DateTime.april));
+          publishDate: DateTime(2023, 12, 7));
   // DateTime.now()하면 동일하게 나오지 않는것 같음.
-  // 책이름과 코멘트를 한글로 하면 false가 나옴.
 
   print(book1 == book2);
 
   Book2 book3 = book1.copyWith(
-      // title: 'The Silmarillion', comment: 'Middle-earth.', publishDate: DateTime.now());
+      //     title: 'The Silmarillion',
+      //     comment: 'Middle-earth.',
+      //     publishDate: DateTime.now());
       title: 'The Silmarillion',
+      // title: '실마릴리온',
       comment: 'Middle-earth',
-      publishDate: DateTime(DateTime.april));
+      publishDate: DateTime(2023, 12, 7));
 
   print(book1 == book3);
 
@@ -73,7 +87,7 @@ void main() {
   Book2 book4 = book1.copyWith(
       title: 'The Lord of the Rings',
       comment: 'The Fellowship of the Ring',
-      publishDate: DateTime(DateTime.january));
+      publishDate: DateTime(2023, 12, 8));
 
   final List<Book2> bookList = [];
   bookList.add(book1);
