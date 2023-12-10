@@ -28,7 +28,10 @@ class Book2 {
       other is Book2 &&
           runtimeType == other.runtimeType &&
           title == other.title &&
-          publishDate == other.publishDate;
+          // publishDate == other.publishDate;
+          publishDate.year == other.publishDate.year &&
+          publishDate.month == other.publishDate.month &&
+          publishDate.day == other.publishDate.day;
 
   @override
   int get hashCode => title.hashCode ^ publishDate.hashCode;
@@ -52,7 +55,8 @@ void main() {
           title: 'The Silmarillion',
           // title: '실마릴리온',
           comment: 'Middle-earth',
-          publishDate: DateTime(2023, 12, 7));
+          // publishDate: DateTime(2023, 12, 7));
+          publishDate: DateTime.now());
 
   Book2 book2 =
       // Book2(
@@ -63,7 +67,8 @@ void main() {
           title: 'The Silmarillion',
           // title: '실마릴리온',
           comment: 'Middle-earth',
-          publishDate: DateTime(2023, 12, 7));
+          // publishDate: DateTime(2023, 12, 7));
+          publishDate: DateTime.now());
   // DateTime.now()하면 동일하게 나오지 않는것 같음.
 
   print(book1 == book2);
@@ -75,7 +80,8 @@ void main() {
       title: 'The Silmarillion',
       // title: '실마릴리온',
       comment: 'Middle-earth',
-      publishDate: DateTime(2023, 12, 7));
+      // publishDate: DateTime(2023, 12, 7));
+      publishDate: DateTime.now());
 
   print(book1 == book3);
 
@@ -87,7 +93,8 @@ void main() {
   Book2 book4 = book1.copyWith(
       title: 'The Lord of the Rings',
       comment: 'The Fellowship of the Ring',
-      publishDate: DateTime(2023, 12, 8));
+      // publishDate: DateTime(2023, 12, 8));
+      publishDate: DateTime.now());
 
   final List<Book2> bookList = [];
   bookList.add(book1);
