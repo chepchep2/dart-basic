@@ -6,6 +6,13 @@ void main() {
 
   // 읽거나 쓰고 닫는다
   // file.writeAsStringSync('Hello World');
-  final text = file.readAsStringSync();
-  print(text);
+
+  try {
+    final text = file.readAsStringSync();
+    print(text);
+  } catch (e) {
+    print('파일이 없습니다.');
+  }
 }
+
+void copy(String source, String target) {}
