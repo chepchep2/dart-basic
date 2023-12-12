@@ -8,6 +8,13 @@ void main() {
   // int num = int.parse(numString);
   // print(num);
 
+  // try {
+  //   int num = int.parse(numString);
+  //   print(num);
+  // } catch (e) {
+  //   print(0);
+  // }
+
   try {
     int num = int.parse(numString);
     print(num);

@@ -17,3 +17,7 @@ void copy(String source, String target) {
 
   targetFile.writeAsStringSync(copyFile.readAsStringSync());
 }
+
+void copy2(String source, String target) {
+  File(source).copySync(target);
+}
