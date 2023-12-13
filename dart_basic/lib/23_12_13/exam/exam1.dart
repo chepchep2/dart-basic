@@ -21,8 +21,8 @@ void copy(String source, String target) async {
 
   if (await sourceFile.exists() == false) {
     // throw Exception('파일 없음');
-    // 위 예외처리로는 되지 않는데 맞는 코드를 못찾음
-    print('파일 없음');
+    throw FileSystemException('파일 없음');
+    // print('파일 없음');
     // exists라는 함수를 알게되었음
     // Future를 반환하기때문에 await 키워드 사용
     // sourceFile이 존재하지 않는지 여부 파악
@@ -40,7 +40,7 @@ void copy(String source, String target) async {
     // changeContent의 내용을 targetFile에 넣는다.
   } else {
     // throw Exception('한석봉 없음');
-    // 이 예외 처리도 안됨
-    print('한석봉 없음');
+    throw FileSystemException('한석봉 없음');
+    // print('한석봉 없음');
   }
 }
