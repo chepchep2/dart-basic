@@ -21,7 +21,8 @@ void main() async {
     await timeoutFuture().timeout(Duration(seconds: 5));
     // Google에 Future.timeout을 검색해서 어떻게 사용하는 지 검색해보고 적용하였다.
   } catch (e) {
-    throw TimeoutException('timeout');
-    // print('timeout');
+    // throw TimeoutException('timeout');
+    // await Future.error(Exception('timeout'));
+    print('timeout');
   }
 }
