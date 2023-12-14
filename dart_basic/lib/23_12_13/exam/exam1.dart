@@ -1,6 +1,6 @@
 import 'dart:io';
 
-void main() async {
+void main() {
   final file = File('sample.csv');
   file.writeAsString('1, 홍길동, 30 \n2, 한석봉, 20');
   // sample.csv파일 생성 후 내용 추가
@@ -28,6 +28,15 @@ void copy(String source, String target) async {
     // Future를 반환하기때문에 await 키워드 사용
     // sourceFile이 존재하지 않는지 여부 파악
   }
+
+  // if (await sourceFile.exists()) {
+  //   sourceFile
+  //       .readAsString()
+  //       .then((value) => targetFile.writeAsString(value))
+  //       .then((_) => targetFile.readAsString())
+  //       .then((value) => print(value));
+  // }
+  /// .then 사용
 
   final content = await sourceFile.readAsString();
   // sourceFile의 내용을 content에 담는다.
