@@ -5,6 +5,12 @@
 /// 예를 들어, reverseString("Hello")는 "olleH"를 반환해야 합니다.
 
 String reverseString(String str) {
+  // String reverseStr = '';
+
+  // for (int i = str.length; i > 0; i--) {
+  //   reverseStr += str[i];
+  // }
+
   final reverseStr = str.split('').reversed.join();
 
   /// split('')로 문자 1개씩 분리해서 리스트로 변환
