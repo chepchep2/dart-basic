@@ -5,5 +5,5 @@
 /// 예를 들어, isEven(4)는 true를 반환해야 합니다.
 
 bool isEven(int a) {
-  return a % 2 == 0;
+  return a.isEven;
 }
